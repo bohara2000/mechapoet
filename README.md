@@ -61,4 +61,4 @@ Display a daily prompt page (ex: https://yoursite.com/napowrimo):
 
 The prompt page will display one poem a day, one prompt a day. You'll be able to edit the text area, run grammar checks, and save the new poem to cloud storage. To pull up a previous day, use (ex: https://yoursite.com/napowrimo/YYYY-MM-DD)
 
-
+PLEASE NOTE, you must rename ".RENAME_to_env" to ".env" and update the environment variables before testing. 
