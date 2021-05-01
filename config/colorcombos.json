@@ -1,0 +1,32 @@
+{
+    "combos": [
+        {
+            "bgColor": "#ae4140",
+            "fgColor": "yellow"
+        },
+        {
+            "bgColor": "#001F3F",
+            "fgColor": "#39CCCC"
+        },
+        {
+            "bgColor": "#FF851B",
+            "fgColor": "#FFFFFF"
+        },
+        {
+            "bgColor": "#AAAAAA",
+            "fgColor": "#111111"
+        },
+        {
+            "bgColor": "#2ECC40",
+            "fgColor": "#FFFFFF"
+        },
+        {
+            "bgColor": "#001F3F",
+            "fgColor": "#FF851B"
+        },
+        {
+            "bgColor": "#FFFFFF",
+            "fgColor": "#001F3F"
+        }
+    ]
+}

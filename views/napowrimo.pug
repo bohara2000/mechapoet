@@ -1,0 +1,82 @@
+extends layouts/layout
+block details
+    form(id="poemform" name="poemform" method="POST" action=`/napowrimo/${date}`)
+        .card 
+            .card-header.bg-primary
+                h2.card-title= message
+            .card-body 
+                .row 
+                    .col-md-6
+                        pre #{poem}
+                    .col-md-6
+                        img(src=prompt_url, alt="daily prompt" width="100%")
+                .row 
+                    .col-md-12.text-center
+                        #grammarcorrect.button.btn.btn-primary Correct grammar
+        .card 
+            .card-body 
+                .row 
+                    .col-md-12
+                        textarea(id="newtext" name="newtext", cols="100", rows="20") #{corrected_poem}                        
+                        input(type="hidden", name="oldtext" id="oldtext" value=`${corrected_poem}`)
+            .card-footer
+                .row
+                    .col-md-12.text-center
+                        input.btn.btn-success(type="submit", value="Publish") 
+                        //- button.btn.btn-secondary Close
+                        #revert.button.btn.btn-info Revert
+
+append scripts
+    script(src="../js/jquery.toast.min.js")
+    script.
+        $(document).ready(function(){
+            $("#revert").on('click', function(event){
+                var oldval = $("#oldtext").val();
+                $("#newtext").val(oldval);
+            });
+
+            $("#grammarcorrect").on('click', function(event){
+                var uncorrectedtxt = $("#newtext").val();
+                $.post('/correctgrammar', { drafttext: uncorrectedtxt })
+                .done(function(data){
+                    let status = data.status
+                    let iconstatus = data.status
+                    if(data.status == 'error'){
+                        iconstatus = 'error'
+                    }
+                    if(data.correction)
+                    {
+                        $("#newtext").val(data.correction);
+                    }
+                    $.toast({
+                            heading: status,
+                            text: data.message,
+                            showHideTransition: 'slide',
+                            icon: iconstatus,
+                            position: 'top-right'
+                        })
+                });
+            })
+
+            $("#poemform").on('submit', function(event){
+                    event.preventDefault();
+                    var data = { newtext: $.trim($("#newtext").val()) };
+                    console.log(data);
+                    var posting = $.post($(this).attr('action'), $( "#poemform" ).serialize());
+    
+                    // refresh the page
+                    posting.done(function( data ) {
+                        //- console.log('return data:', data);
+                        
+                        $.toast({
+                            heading: 'Success',
+                            text: data.message,
+                            showHideTransition: 'slide',
+                            icon: 'success',
+                            position: 'top-right'
+                        })
+                        //- window.location.href=window.location.href; 
+                    });
+                    //- location.reload();  
+                })
+        });                  

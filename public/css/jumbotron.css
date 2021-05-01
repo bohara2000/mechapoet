@@ -1,0 +1,17 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+h2.card-title {
+  padding: 20px !important;
+}
+
+textarea {
+  min-width:500px; 
+  max-width:100%;
+  min-height:50px;
+  height:100%;
+  width:100%;
+}

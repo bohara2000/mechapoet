@@ -1,0 +1,21 @@
+extends  ../../node_modules/pug-bootstrap/_bootstrap
+append styles
+	// Custom styles for this template
+	link(href='../css/jumbotron.css', rel='stylesheet')
+	link(href='../css/jquery.toast.min.css', rel='stylesheet')
+	
+
+block body
+	
+	.jumbotron
+		.container
+			h1 My NaPoWriMo Poetry form
+			p
+				| This is my personal app form to create poems based on my MechaPoet Twitter feed 
+			//- p
+			//- 	a.btn.btn-primary.btn-lg(href='#', role='button') Learn more »
+	.container
+		block details
+		footer
+			p © Bryant O'Hara 2021
+	block content

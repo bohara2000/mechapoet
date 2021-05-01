@@ -1,0 +1,28 @@
+{
+  "name": "mechapoet",
+  "version": "1.0.0",
+  "description": "This application will generate poetry on a scheduled basis and send it to Twitter.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bryant O'Hara",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/storage-blob": "^12.0.0",
+    "azure-storage": "^2.10.3",
+    "body-parser": "^1.19.0",
+    "canvas": "^2.7.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "grammarbot": "^1.0.3",
+    "needle": "^2.6.0",
+    "poem-gen": "^0.3.0",
+    "post-image-to-twitter": "^1.0.1",
+    "pug": "^3.0.2",
+    "pug-bootstrap": "0.0.16",
+    "text2png": "^2.3.0",
+    "twit": "^2.2.11"
+  }
+}
