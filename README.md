@@ -6,7 +6,7 @@ The purpose of creating the MechaPoet project is twofold:
 
 ## Acknowledgements
 
-This project relies heavily on the poem-gen project, a poem generator created for NaNoGenMo 2014 by Camden Segal. It uses large source texts from Project Gutenberg to make poems.
+This project relies heavily on the poem-gen project, a pretty cool poem generator created for NaNoGenMo 2014 by Camden Segal. It uses large source texts from Project Gutenberg to make poems.
 
 To find out more about poem-gen, check out https://github.com/CamdenSegal/poem-gen
 
